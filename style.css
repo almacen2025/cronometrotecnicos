@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+}
+
+input, select, button {
+  margin: 5px;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#logo {
+  width: 180px;
+  height: auto;
+  max-width: 90%;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+#cronometro {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  font-family: 'Courier New', monospace;
+  background-color: #000;
+  color: #0f0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  input, select, button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  table, th, td {
+    font-size: 0.9rem;
+  }
+
+  #cronometro {
+    font-size: 36px;
+  }
+}

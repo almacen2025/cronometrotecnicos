@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="logo-container">
+  <img src="https://www.prosegur.com.ar/dam-alarms/jcr:07abad91-2e19-4b5a-bcce-5104b6f1d7ca/Logo%20Prosegur_Alarms_web%20(2).2020-06-26-14-35-53.svg" alt="Logo Prosegur" id="logo">
+</div>
+
+<h2>TIEMPO ALMACÉN</h2>
+
+<label for="nombre">Nombre:</label>
+<select id="nombre">
+  <option value="">Selecciona tu nombre</option>
+  <option value="ACERBI">ACERBI (AR00124840)</option>
+  <option value="ALBORNOZ">ALBORNOZ (AR00117170)</option>
+  <option value="ALMIRON">ALMIRON (AR00118155)</option>
+  <option value="BAEZ">BAEZ (AR00123858)</option>
+  <option value="BOSSI">BOSSI (AR00124666)</option>
+  <option value="BUDASSI">BUDASSI (AR00111146)</option>
+<option value="CALOMENI">CALOMENI (AR00090137)</option>
+<option value="CAPPUCCIO">CAPPUCCIO (AR00116831)</option>
+<option value="CASTILLO">CASTILLO (AR00116578)</option>
+<option value="CORONEL">CORONEL (AR00123903)</option>
+<option value="CORREA">CORREA (AR00126305)</option>
+<option value="DAGOTTO ">DAGOTTO (AR00102129)</option>
+<option value="DEL DUCA ">DEL DUCA (AR00125959)</option>
+<option value="DOMINGUEZ">DOMINGUEZ (AR00130304)</option>
+<option value="DUTTO">DUTTO (AR00130164)</option>
+<option value="ESPECHE">ESPECHE (AR00120759)</option>
+<option value="FERNANDEZ ">FERNANDEZ (AR00122355)</option>
+<option value="GIL">GIL (AR00128649)</option>
+<option value="GIRALDEZ">GIRALDEZ (AR00090031)</option>
+<option value="NELSON GONZALEZ">NELSON GONZALEZ (AR00130557)</option>
+<option value="GROS">GROS (AR00129219)</option>
+<option value="GUARNACCIA">GUARNACCIA (AR00125860)</option>
+<option value="HOYOS">HOYOS (AR00132654)</option>
+<option value="LEGUIZAMON">LEGUIZAMON (AR00124385)</option>
+<option value="MADRID">MADRID (AR00122995)</option>
+<option value="MARQUEZ">MARQUEZ (AR00124799)</option>
+<option value="MELGAREJO">MELGAREJO (AR00124660)</option>
+<option value="NADAL">NADAL (AR00122911)</option>
+<option value="NAVARRO">NAVARRO (AR00121310)</option>
+<option value="ANDRES NIEVA">ANDRES NIEVA (AR00120360)</option>
+<option value="NOWOSAD">NOWOSAD (AR00124838)</option>
+<option value="OPORTO">OPORTO (AR00129803)</option>
+<option value="PASCUALE">PASCUALE (AR00123207)</option>
+<option value="RADUAZZO">RADUAZZO (AR00090079)</option>
+<option value="REQUELME">REQUELME (AR00116665)</option>
+<option value="RIESGO">RIESGO (AR00111360)</option>
+<option value="RIOS ">RIOS (AR00122327)</option>
+<option value="RIVERO">RIVERO (AR00131027)</option>
+<option value="RODRIGUEZ">RODRIGUEZ (AR00124382)</option>
+<option value="ROMERO">ROMERO (AR00121393)</option>
+<option value="SANTILLAN">SANTILLAN(AR00116889)</option>
+<option value="SANZONE">SANZONE (AR00130165)</option>
+<option value="TOLEDANO">TOLEDANO (AR00111708)</option>
+<option value="TOLEDO">TOLEDO (AR00114692)</option>
+<option value="TORRES">TORRES (AR00123829)</option>
+<option value="TREJO">TREJO (AR00124112)</option>
+<option value="VALLEJOS">VALLEJOS (AR00129991)</option>
+<option value="VIEYTES ">VIEYTES (AR00116884)</option>
+<option value="VILLEGAS">VILLEGAS (AR00130560)</option>
+<option value="VILLANI ">VILLANI (AR00090110)</option>
+<option value="YORINI">YORINI (AR00127196)</option><!-- Agregá aquí el resto de los nombres y legajos -->
+</select>
+
+<button onclick="iniciar()">Iniciar</button>
+<button onclick="detener()">Detener</button>
+<button onclick="descargarExcel()">Descargar Excel</button>
+<button onclick="borrarDatos()" style="font-size: 0.8rem; padding: 5px 10px; background-color: #f44336; color: white; border: none; border-radius: 4px; margin-left: 5px;">Borrar Datos</button>
+
+
+<div id="cronometro">00:00:00</div>
+
+<table id="tabla">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Legajo</th>
+      <th>Tiempo</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
