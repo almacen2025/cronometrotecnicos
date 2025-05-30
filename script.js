@@ -137,7 +137,7 @@ function borrarDatos() {
 } //   
 
 function enviarAGoogleSheets(registro) {
-  fetch("https://script.google.com/macros/s/AKfycbxDwlt80eRRUCnmVj8WTIj2X6a_0Gy6ytirBNFMM5kRfOXJrvTTpZZpKQ0uqf5FSwwn/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzhKHaGDcipFSNS2wTU5Q8m9cda6f8ojPLCFc7NYZeMD8fWdVhSsWXp1KGmkXmKT45N/exec", {
     method: "POST",
     body: JSON.stringify(registro),
     headers: {
