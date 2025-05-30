@@ -124,6 +124,7 @@ function borrarDatos() {
     clearInterval(intervalo);
     cronometroActivo = false;
   }
+}  
 function enviarAGoogleSheets(registro) {
   fetch("https://script.google.com/macros/s/AKfycbzcxwpj3pcXcCgCgCYtO8tY_Dbov5ayVKht6SUt5aQeJmIPtAdxdjRBNTOzE62Dzsk7/exec", {
     method: "POST",
