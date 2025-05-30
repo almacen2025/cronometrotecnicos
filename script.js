@@ -95,26 +95,32 @@ function descargarExcel() {
 }
 
 function borrarDatos() {
-  // Limpiar la tabla
-  const tabla = document.getElementById("tabla").getElementsByTagName("tbody")[0];
-  tabla.innerHTML = "";
+  const confirmar = window.confirm("¿Estás seguro de que querés borrar todos los datos? Esta acción no se puede deshacer.");
 
-  // Reiniciar el cronómetro
-  document.getElementById("cronometro").textContent = "00:00:00";
-  document.getElementById("cronometro").style.color = "black";
+  if (!confirmar) {
+    return; // Si el usuario cancela, no se hace nada
+  }
 
-  // Limpiar el array de datos
-  datos = [];
+  // Limpiar la tabla
+  const tabla = document.getElementById("tabla").getElementsByTagName("tbody")[0];
+  tabla.innerHTML = "";
 
-  // Eliminar los datos del almacenamiento local
-  localStorage.removeItem("registros");
+  // Reiniciar el cronómetro
+  document.getElementById("cronometro").textContent = "00:00:00";
+  document.getElementById("cronometro").style.color = "black";
 
-  // Reiniciar el selector de nombre
-  document.getElementById("nombre").selectedIndex = 0;
+  // Limpiar el array de datos
+  datos = [];
 
-  // Detener el cronómetro si está activo
-  if (cronometroActivo) {
-    clearInterval(intervalo);
-    cronometroActivo = false;
-  }
+  // Eliminar los datos del almacenamiento local
+  localStorage.removeItem("registros");
+
+  // Reiniciar el selector de nombre
+  document.getElementById("nombre").selectedIndex = 0;
+
+  // Detener el cronómetro si está activo
+  if (cronometroActivo) {
+    clearInterval(intervalo);
+    cronometroActivo = false;
+  }
 }
