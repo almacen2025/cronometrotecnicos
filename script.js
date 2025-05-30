@@ -124,8 +124,9 @@ function borrarDatos() {
     clearInterval(intervalo);
     cronometroActivo = false;
   }
-}  
-// 
+}
+
+// ✅ Esta función debe estar fuera de cualquier otra
 function enviarAGoogleSheets(registro) {
   fetch("https://script.google.com/macros/s/AKfycbzcxwpj3pcXcCgCgCYtO8tY_Dbov5ayVKht6SUt5aQeJmIPtAdxdjRBNTOzE62Dzsk7/exec", {
     method: "POST",
@@ -135,8 +136,6 @@ function enviarAGoogleSheets(registro) {
     }
   })
   .then(response => response.text())
-  .then(result => console.log("Datos enviados a Google Sheets:", result))
-  .catch(error => console.error("Error al enviar a Google Sheets:", error));
-}
- 
+  .then(result => console.log("✅ Datos enviados a Google Sheets:", result))
+  .catch(error => console.error("❌ Error al enviar a Google Sheets:", error));
 }
