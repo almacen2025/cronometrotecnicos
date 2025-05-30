@@ -123,7 +123,8 @@ function borrarDatos() {
   if (cronometroActivo) {
     clearInterval(intervalo);
     cronometroActivo = false;
-}
+ }
+} //   
 
 function enviarAGoogleSheets(registro) {
   google.script.run
