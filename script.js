@@ -159,23 +159,6 @@ function enviarAGoogleSheets(registro) {
   });
 }
 
-    }
-  })
-  .then(response => {
-    if (response.ok) {
-      console.log("✅ Datos enviados correctamente");
-      mostrarMensajeExito();
-    } else {
-      console.error("❌ Error en la respuesta del servidor");
-      mostrarMensajeError();
-    }
-  })
-  .catch(error => {
-    console.error("❌ Error al enviar los datos:", error);
-    mostrarMensajeError();
-  });
-}
-
 function mostrarMensajeExito() {
   const mensaje = document.getElementById("mensaje-exito");
   mensaje.style.display = "block";
