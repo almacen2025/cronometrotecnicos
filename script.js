@@ -123,4 +123,17 @@ function borrarDatos() {
     clearInterval(intervalo);
     cronometroActivo = false;
   }
+function enviarAGoogleSheets(registro) {
+  fetch("https://script.google.com/macros/s/AKfycbzcxwpj3pcXcCgCgCYtO8tY_Dbov5ayVKht6SUt5aQeJmIPtAdxdjRBNTOzE62Dzsk7/exec", {
+    method: "POST",
+    body: JSON.stringify(registro),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(response => response.text())
+  .then(result => console.log("Datos enviados a Google Sheets:", result))
+  .catch(error => console.error("Error al enviar a Google Sheets:", error));
+}
+ 
 }
