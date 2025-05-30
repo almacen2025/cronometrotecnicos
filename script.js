@@ -128,7 +128,7 @@ function borrarDatos() {
 
 // ✅ Esta función debe estar fuera de cualquier otra
 function enviarAGoogleSheets(registro) {
-  fetch("https://script.google.com/macros/s/AKfycbzcxwpj3pcXcCgCgCYtO8tY_Dbov5ayVKht6SUt5aQeJmIPtAdxdjRBNTOzE62Dzsk7/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzcrwxp3pcXcCgGycIQY08Y_Dbov5ayVKh6t5uSAJeJmIPtAdxjRBNTOz6EZDzsK7/exec", {
     method: "POST",
     body: JSON.stringify(registro),
     headers: {
