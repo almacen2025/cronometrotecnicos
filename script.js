@@ -127,12 +127,16 @@ function borrarDatos() {
 }
 // 
 function enviarAGoogleSheets(registro) {
-  fetch("https://script.google.com/macros/s/AKfycbzcrwxp3pcXcCgGycIQY08Y_Dbov5ayVKh6t5uSAJeJmIPtAdxjRBNTOz6EZDzsK7/exec", {
-    method: "POST",
-    body: JSON.stringify(registro),
-    headers: {
-      "Content-Type": "application/json"
+  google.script.run
+    .withSuccessHandler(() => {
+      mostrarMensajeExito();
+    })
+    .withFailureHandler(() => {
+      mostrarMensajeError();
+    })
+    .guardarEnHoja(registro);
     }
+
   })
   .then(response => response.text())
   .then(result => {
