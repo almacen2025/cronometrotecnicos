@@ -149,4 +149,12 @@ function mostrarMensajeExito() {
     mensaje.style.display = "none";
   }, 3000); // Oculta el mensaje después de 3 segundos
 }
+function mostrarMensajeError() {
+  const mensaje = document.getElementById("mensaje-error");
+  mensaje.style.display = "block";
+  setTimeout(() => {
+    mensaje.style.display = "none";
+  }, 4000); // Oculta el mensaje después de 4 segundos
+}
+
 
