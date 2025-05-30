@@ -135,20 +135,8 @@ function enviarAGoogleSheets(registro) {
       mostrarMensajeError();
     })
     .guardarEnHoja(registro);
-    }
-
-  })
-  .then(response => response.text())
-  .then(result => {
-    console.log("✅ Datos enviados a Google Sheets:", result);
-    mostrarMensajeExito();
-  })
-  .catch(error => {
-    console.error("❌ Error al enviar a Google Sheets:", error);
-    mostrarMensajeError(); // 👈 Mostrar mensaje de error
-  });
+   
 }
-
 
 function mostrarMensajeExito() {
   const mensaje = document.getElementById("mensaje-exito");
