@@ -76,6 +76,7 @@ function detener() {
   datos.push(registro);
   localStorage.setItem("registros", JSON.stringify(datos));
   agregarFila(registro);
+  enviarAGoogleSheets(registro);
 
   document.getElementById("cronometro").textContent = "00:00:00";
   select.selectedIndex = 0;
