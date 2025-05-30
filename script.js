@@ -137,15 +137,26 @@ function borrarDatos() {
 } //   
 
 function enviarAGoogleSheets(registro) {
-  google.script.run
-    .withSuccessHandler(() => {
+  fetch("https://script.google.com/macros/s/AKfycbzhKHaGDcipFSNS2wTU5Q8m9cda6f8ojPLCFc7NYZeMD8fWdVhSsWXp1KGmkXmKT45N/exec", {
+    method: "POST",
+    body: JSON.stringify(registro),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log("✅ Datos enviados correctamente");
       mostrarMensajeExito();
-    })
-    .withFailureHandler(() => {
+    } else {
+      console.error("❌ Error en la respuesta del servidor");
       mostrarMensajeError();
-    })
-    .guardarEnHoja(registro);
-  
+    }
+  })
+  .catch(error => {
+    console.error("❌ Error al enviar los datos:", error);
+    mostrarMensajeError();
+  });
 }
 
 function mostrarMensajeExito() {
