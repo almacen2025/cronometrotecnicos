@@ -123,9 +123,8 @@ function borrarDatos() {
   if (cronometroActivo) {
     clearInterval(intervalo);
     cronometroActivo = false;
-  }
 }
-// 
+
 function enviarAGoogleSheets(registro) {
   google.script.run
     .withSuccessHandler(() => {
@@ -135,7 +134,7 @@ function enviarAGoogleSheets(registro) {
       mostrarMensajeError();
     })
     .guardarEnHoja(registro);
-   
+  
 }
 
 function mostrarMensajeExito() {
