@@ -1,7 +1,5 @@
-// Cargar SheetJS para exportar a Excel
-const script = document.createElement('script');
-script.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js";
-document.head.appendChild(script);
+console.log("✅ Script cargado correctamente");
+
 let inicio, intervalo;
 let datos = [];
 let cronometroActivo = false;
@@ -9,14 +7,18 @@ let segundosTotales = 0;
 
 // Cargar datos guardados al iniciar
 window.onload = function () {
+  console.log("🔄 Cargando datos desde localStorage...");
   const guardados = localStorage.getItem("registros");
   if (guardados) {
     datos = JSON.parse(guardados);
     datos.forEach(registro => agregarFila(registro));
+    console.log("✅ Datos cargados:", datos);
   }
 };
 
 function iniciar() {
+  console.log("🟢 Botón 'Iniciar' presionado");
+
   if (cronometroActivo) {
     alert("El cronómetro ya está en marcha.");
     return;
@@ -33,10 +35,12 @@ function iniciar() {
   inicio = new Date();
   cronometroActivo = true;
   intervalo = setInterval(actualizarCronometro, 1000);
+  console.log("⏱️ Cronómetro iniciado");
 }
 
 function actualizarCronometro() {
   segundosTotales++;
+  console.log("⏳ Tiempo transcurrido (segundos):", segundosTotales);
 
   const horas = Math.floor(segundosTotales / 3600);
   const minutos = Math.floor((segundosTotales % 3600) / 60);
@@ -50,7 +54,6 @@ function actualizarCronometro() {
   const cronometro = document.getElementById('cronometro');
   cronometro.textContent = formato;
 
-  // Cambiar a rojo si pasa los 8 minutos
   if (segundosTotales >= 480) {
     cronometro.style.color = 'red';
   } else {
@@ -59,7 +62,12 @@ function actualizarCronometro() {
 }
 
 function detener() {
-  if (!cronometroActivo) return;
+  console.log("🔴 Botón 'Detener' presionado");
+
+  if (!cronometroActivo) {
+    console.log("⚠️ El cronómetro no estaba activo");
+    return;
+  }
 
   clearInterval(intervalo);
   cronometroActivo = false;
@@ -80,7 +88,9 @@ function detener() {
 
   document.getElementById("cronometro").textContent = "00:00:00";
   select.selectedIndex = 0;
+  console.log("✅ Registro guardado:", registro);
 }
+
 
 function agregarFila({ nombre, legajo, tiempo, fecha }) {
   const fila = document.createElement("tr");
