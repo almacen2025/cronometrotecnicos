@@ -139,3 +139,12 @@ function enviarAGoogleSheets(registro) {
   .then(result => console.log("✅ Datos enviados a Google Sheets:", result))
   .catch(error => console.error("❌ Error al enviar a Google Sheets:", error));
 }
+
+function mostrarMensajeExito() {
+  const mensaje = document.getElementById("mensaje-exito");
+  mensaje.style.display = "block";
+  setTimeout(() => {
+    mensaje.style.display = "none";
+  }, 3000); // Oculta el mensaje después de 3 segundos
+}
+
